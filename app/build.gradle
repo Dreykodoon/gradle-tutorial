@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'maven-publish'
 }
 
 repositories {
@@ -34,3 +35,19 @@ application {
     // Define the main class for the application.
     mainClass = 'org.example.App'
 }
+
+
+
+publishing {
+    publications {
+        create("maven", MavenPublication) {
+            groupId = "com.gradle.tutorial"
+            artifactId = "tutorial"
+            version = "1.0"
+
+            from(components["java"])
+        }
+    }
+}
+
+
