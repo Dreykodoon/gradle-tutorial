@@ -1,0 +1,6 @@
+# config files
+.gradle
+.idea
+
+# misc
+build
